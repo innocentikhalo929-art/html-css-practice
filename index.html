@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Innocent - Design Studio</title>
+
+  <style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 15px;
+}
+.btn:hover {
+  opacity: .8;
+}
+.btn-primary {
+  background: #000;
+  color: #fff;
+}
+.btn-outline {
+  border: 1px solid #e5e5e5;
+}
+.navbar {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 18px 0;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+.nav-links {
+  display: flex;
+  gap: 28px;
+  margin-left: auto;
+  margin-right: 28px;
+}
+.nav-links a {
+  font-size: 15px;
+  color: #666;
+}
+.nav-links a:hover {
+  color: #111;
+}
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+}
+.menu-btn span {
+  width: 22px;
+  height: 2px;
+  background: #111;
+}
+.hero {
+  text-align: center;
+  padding: 80px 20px 40px 20px;
+}
+.hero h1 {
+  font-size: 48px;
+  max-width: 780px;
+  margin: 0 auto 40px auto;
+  line-height: 1.15;
+}
+.hero h1 span {
+  color: #666;
+}
+.hero-img {
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.hero p {
+  max-width: 480px;
+  margin: 0 auto 24px auto;
+  color: #666;
+}
+.statement {
+  text-align: center;
+  padding: 60px 20px;
+}
+.statement h2 {
+  font-size: 32px;
+  max-width: 600px;
+  margin: 0 auto 24px auto;
+}
+.projects {
+  padding: 60px 20px;
+}
+.projects h3 {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #666;
+  margin-bottom: 24px;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.project-card img {
+  border-radius: 6px;
+  margin-bottom: 12px;
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+.clients {
+  text-align: center;
+  padding: 60px 20px;
+  background: #000;
+  color: #fff;
+}
+.clients h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+.client-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  justify-items: center;
+}
+.client-grid img {
+  max-height: 28px;
+  opacity: .7;
+  filter: grayscale(100%);
+}
+.cta {
+  text-align: center;
+  background: f7f7f7;
+  padding: 80px 20px;
+  border-radius: 6px;
+  margin: 40px 20px;
+}
+.cta h2 {
+  font-size: 32px;
+  max-width: 600px;
+  margin: 0 auto 24px auto;
+}
+footer {
+  border-top: 1px solid #e5e5e5;
+  padding: 60px 20px 30px 20px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 24px;
+}
+.footer-grid h5 {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 14px;
+}
+.footer-grid a {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+.footer-grid a:hover {
+  color: #111;
+}
+.footer-brand {
+  font-weight: bold;
+}
+.footer-note {
+  color: #666;
+  font-size: 14px;
+  margin-top: 4px;
+}
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 34px;
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .menu-btn {
+    display: flex;
+  }
+  .nav-inner .btn-primary {
+    display: none;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  .client-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  }
+  </style>
+
+</head>
+<body>
+  <header class="navbar">
+  <div class="container nav-inner">
+    <a href="#" class="logo no-nav">Foundation</a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <a href="#" class="btn btn-primary no-nav">Hire us &rarr;</a>
+
+    <button class="menu-btn" id="menuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+<section class="hero container">
+  <h1>A design studio focused on <span>pushing brands forward</span></h1>
+
+  <div class="hero-img">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.4535714569774!2d5.623277410979814!3d6.335243293627989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1040d3755daf2de1%3A0x6a17198d37e24f9a!2sDeebug%20Institute%2FStudios!5e0!3m2!1sen!2sng!4v1785334132263!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu mi sit amet nibh sollicitudin tristique. Duis suscipit, erat vitae auctor tincidunt.</p>
+
+  <a href="#" class="btn btn-primary no-nav">Start a project &rarr;</a>
+</section>
+<section class="statement container">
+  <h2>We work directly with founders &amp; visionaries.</h2>
+  <a href="#work" class="btn btn-outline">See our work &rarr;</a>
+</section>
+<section class="projects container" id="work">
+  <h3>Recent Projects</h3>
+
+  <div class="project-grid">
+    <div class="project-card">
+      <img src=".first.jpeg" alt="signspot">
+      <h4>Signspot</h4>
+    </div>
+    <div class="project-card">
+      <img src=".second.jpeg" alt="bettr">
+      <h4>Bettr</h4>
+    </div>
+    <div class="project-card">
+      <img src=".third.jpeg" alt="sportshop">
+      <h4>Sportshop</h4>
+    </div>
+    <div class="project-card">
+      <img src=".fourth.jpeg" alt="madeup">
+      <h4>MadeUp</h4>
+    </div>
+  </div>
+
+  <a href="#" class="btn btn-outline no-nav">See all Work &rarr;</a>
+</section>
+<section class="clients container" id="services">
+  <h2>Some of our clients</h2>
+  <div class="client-grid">
+    <img src="IMG-3.jpg" alt="webflow">
+    <img src="IMG-1.jpg" alt="reign">
+    <img src="IMG-4.jpg" alt="upwork">
+    <img src="IMG-5.jpg" alt="restok">
+    <img src="IMG-2.jpg" alt="thirdspring">
+    <img src="IMG-6.jpg" alt="fieldtest">
+    <img src="IMG-7.jpg" alt="bettr">
+    <img src="IMG-8.jpg" alt="freespin">
+    <img src="IMG-9.jpg" alt="dualsport">
+  </div>
+</section>
+<section class="cta container" id="about">
+  <h2>Interested in working with Foundation? We'd love to hear from you.</h2>
+  <a href="#" class="btn btn-primary no-nav">Schedule a call &rarr;</a>
+</section>
+
+<footer id="contact">
+  <div class="container footer-grid">
+    <div>
+      <p class="footer-brand">&copy; Foundation</p>
+      <p class="footer-note">Powered by Webflow.</p>
+    </div>
+
+    <div>
+      <h5>Pages</h5>
+      <a href="#" class="no-nav">About</a>
+      <a href="#" class="no-nav">Contact</a>
+      <a href="#" class="no-nav">Blog</a>
+      <a href="#" class="no-nav">License</a>
+      <a href="#" class="no-nav">Style Guide</a>
+      <a href="#" class="no-nav">Changelog</a>
+      <a href="#" class="no-nav">Password</a>
+      <a href="#" class="no-nav">404</a>
+    </div>
+
+    <div>
+      <h5>More</h5>
+      <a href="#" class="no-nav">Home 1</a>
+      <a href="#" class="no-nav">Home 2</a>
+      <a href="#" class="no-nav">Home 3</a>
+      <a href="#" class="no-nav">Work 1</a>
+      <a href="#" class="no-nav">Work 2</a>
+      <a href="#" class="no-nav">Work 3</a>
+    </div>
+
+    <div>
+      <h5>Social</h5>
+      <a href="#" class="no-nav">Twitter</a>
+      <a href="#" class="no-nav">Instagram</a>
+      <a href="#" class="no-nav">Facebook</a>
+    </div>
+  </div>
+</footer>
+<script>
+  // mobile menu stuff
+  var menuBtn = document.getElementById("menuBtn");
+  var navLinks = document.getElementById("navLinks");
+
+  menuBtn.addEventListener("click", function () {
+    navLinks.classList.toggle("show");
+  });
+
+  // close menu once you click a link
+  var links = navLinks.querySelectorAll("a");
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener("click", function () {
+      navLinks.classList.remove("show");
+    });
+  }
+
+  // buttons that shouldn't actually go anywhere
+  var deadLinks = document.querySelectorAll("a.no-nav");
+  for (var j = 0; j < deadLinks.length; j++) {
+    deadLinks[j].addEventListener("click", function (e) {
+      e.preventDefault();
+    });
+  }
+
+  // smooth scroll for the real nav links (work/services/about)
+  var scrollLinks = document.querySelectorAll('a[href^="#"]:not(.no-nav)');
+  scrollLinks.forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      var target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
